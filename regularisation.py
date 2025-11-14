@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import LogisticRegression, ElasticNetCV, LogisticRegressionCV
 
-data = pd.read_csv("processed_data.csv")
+data = pd.read_csv("documents/data/processed_data.csv")
 
 y_class = data.iloc[:, 0]
 y_reg = data.iloc[:, 1]
@@ -26,6 +26,7 @@ reg_pipeline = make_pipeline(
     StandardScaler(),
     ElasticNetCV(cv=5, random_state=42)
 )
+
 reg_scores = cross_val_score(reg_pipeline, X, y_reg, cv=cv, scoring='r2')
 print(f"Regression CV R²: {reg_scores.mean():.3f}")
 

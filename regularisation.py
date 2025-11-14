@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import LogisticRegression, ElasticNetCV, LogisticRegressionCV
 
-data = pd.read_csv("GroupAssignment-Data.csv")
+data = pd.read_csv("processed_data.csv")
 
 y_class = data.iloc[:, 0]
 y_reg = data.iloc[:, 1]
